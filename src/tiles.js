@@ -1,4 +1,4 @@
-export const retroForrestAssets = [
+export const tiles = [
   'deco_boulder_A.FBX',
   'deco_boulder_B.FBX',
   'deco_boulder_round.FBX',
@@ -76,22 +76,28 @@ export const retroForrestAssets = [
   'floorEdge_4vert.FBX',
   'floorEdge_corner.FBX',
   'floorEdge_corner_1vert.FBX',
+
   'floorHole.FBX',
+
   'floor_A.FBX',
   'floor_B.FBX',
   'floor_C.FBX',
   'floor_big.FBX',
+
   'roomTemplate_10x8.FBX',
   'roomTemplate_8x6.FBX',
+
   'stairs_noWalls.FBX',
   'stairs_wallLeft.FBX',
   'stairs_wallRight.FBX',
   'stairs_wallsAll.FBX',
+
   'wallBottom_A.FBX',
   'wallBottom_B.FBX',
   'wallBottom_cornerOut.FBX',
   'wallBottom_cornerOutDouble.FBX',
   'wallBottom_isle.FBX',
+
   'wallHole_1wall_A.FBX',
   'wallHole_1wall_B.FBX',
   'wallHole_2wallVar_A.FBX',
@@ -102,11 +108,14 @@ export const retroForrestAssets = [
   'wallHole_3walls_B.FBX',
   'wallHole_all_A.FBX',
   'wallHole_all_B.FBX',
+
   'wallMiniBottom_cornerOut.FBX',
+
   'wallMini_A.FBX',
   'wallMini_B.FBX',
   'wallMini_cornerIn.FBX',
   'wallMini_cornerOut.FBX',
+
   'wall_A.FBX',
   'wall_B.FBX',
   'wall_box.FBX',
@@ -123,6 +132,7 @@ export const retroForrestAssets = [
   'wall_edge_A.FBX',
   'wall_edge_B.FBX',
   'wall_isle_B.FBX',
+
   'waterfloorEdge_1line.FBX',
   'waterfloorEdge_1line_1vertA.FBX',
   'waterfloorEdge_1line_1vertB.FBX',
