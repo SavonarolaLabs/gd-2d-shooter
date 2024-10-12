@@ -1,6 +1,5 @@
 export const buildings = [
-  //'Archery.FBX',
-  'Archery.glb',
+  'Archery.fbx',
   //   'Barracks.FBX',
   //   'Blacksmith.FBX',
   //   'Castle.FBX',
