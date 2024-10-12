@@ -68,13 +68,14 @@ export async function createLevel() {
         set('floorEdge_corner', a - s / 2, b - s / 2);
       } else {
         set(randomFloor(), a - s / 2, b - s / 2);
-        const deco = tiles.filter((t) => t.startsWith('deco_treeDead')).map((a) => a.split('.')[0]);
-        if (Math.random() < 0.1) set(deco[Math.floor(Math.random() * deco.length)], a - s / 2, b - s / 2, Math.PI);
-        const flower = tiles.filter((t) => t.startsWith('deco_grass')).map((a) => a.split('.')[0]);
-        if (Math.random() < 0.3) set(flower[Math.floor(Math.random() * flower.length)], a - s / 2, b - s / 2, Math.PI);
-        const shrooms = tiles.filter((t) => t.startsWith('deco_mushrooms')).map((a) => a.split('.')[0]);
-        if (Math.random() < 0.04) set(shrooms[Math.floor(Math.random() * shrooms.length)], a - s / 2, b - s / 2, Math.PI);
-        if (Math.random() < 0.1) set('deco_tree_B', a - s / 2, b - s / 2, Math.PI);
+        if (a > b) {
+          const deco = tiles.filter((t) => t.startsWith('deco_treeDead')).map((a) => a.split('.')[0]);
+          if (Math.random() < 0.1) set(deco[Math.floor(Math.random() * deco.length)], a - s / 2, b - s / 2, Math.PI);
+        } else {
+          const shrooms = tiles.filter((t) => t.startsWith('deco_mushrooms')).map((a) => a.split('.')[0]);
+          if (Math.random() < 0.04) set(shrooms[Math.floor(Math.random() * shrooms.length)], a - s / 2, b - s / 2, Math.PI);
+          if (Math.random() < 0.1) set('deco_tree_B', a - s / 2, b - s / 2, Math.PI);
+        }
       }
     }
   }
