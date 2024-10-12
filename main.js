@@ -6,7 +6,7 @@ import { onResize } from './src/onResize';
 import { tiles } from './src/tiles';
 
 // initial setup
-const map_size = 40;
+const map_size = 195;
 const viewSize = map_size / 2;
 const { scene, renderer, camera, controls } = init(TR, viewSize);
 setLight(TR, scene);

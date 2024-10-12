@@ -30,6 +30,7 @@ export async function loadRetroForrest(TR) {
         child.material.map = texture;
         child.material.map.repeat.set(1, 1); // Adjust tiling if necessary
         child.material.map.offset.set(0.0, 0.0); // Adjust if the texture is offset incorrectly
+        child.material.side = TR.DoubleSide;
         child.material.needsUpdate = true;
       }
     });
