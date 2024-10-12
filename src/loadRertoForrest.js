@@ -38,7 +38,6 @@ export async function loadRetroForrest(TR) {
     fbx.position.set(0, 0, 0);
     fbx.scale.set(0.5, 0.5, 0.5);
     blocks[tiles[i].split('.')[0]] = fbx;
-    console.log(fbx);
   }
   return blocks;
 }

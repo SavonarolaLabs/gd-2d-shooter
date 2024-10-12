@@ -6,7 +6,9 @@ import { onResize } from './src/onResize';
 import { tiles } from './src/tiles';
 
 // initial setup
-const map_size = 195;
+//const map_size = 195; dota
+//const map_size = 480; //wc3
+const map_size = 100;
 const viewSize = map_size / 2;
 const { scene, renderer, camera, controls } = init(TR, viewSize);
 setLight(TR, scene);
@@ -68,6 +70,7 @@ export async function createLevel() {
         set('floorEdge_corner', a - s / 2, b - s / 2);
       } else {
         set(randomFloor(), a - s / 2, b - s / 2);
+        continue;
         if (a > b) {
           const deco = tiles.filter((t) => t.startsWith('deco_treeDead')).map((a) => a.split('.')[0]);
           if (Math.random() < 0.1) set(deco[Math.floor(Math.random() * deco.length)], a - s / 2, b - s / 2, Math.PI);
