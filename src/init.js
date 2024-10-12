@@ -1,7 +1,6 @@
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-export const viewSize = 100;
-export function init(TR) {
+export function init(TR, viewSize) {
   const scene = new TR.Scene();
   const renderer = new TR.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -13,7 +12,7 @@ export function init(TR) {
 
   const aspectRatio = window.innerWidth / window.innerHeight;
   const camera = new TR.OrthographicCamera((-viewSize * aspectRatio) / 2, (viewSize * aspectRatio) / 2, viewSize / 2, -viewSize / 2, 1, 1000);
-  camera.position.set(100, 100, 100);
+  camera.position.set(viewSize, viewSize, viewSize);
   camera.lookAt(0, 0, 0);
 
   const controls = new OrbitControls(camera, renderer.domElement);
