@@ -1,14 +1,15 @@
 import * as TR from 'three';
-import { loadRetroForrest } from './src/loadRertoForrest';
+import { loadBuildings } from './src/loadBuildings';
 import { setLight } from './src/light';
 import { init } from './src/init';
 import { onResize } from './src/onResize';
 import { tiles } from './src/tiles';
+import { loadRetroForrest } from './src/loadRertoForrest';
 
 // initial setup
 //const map_size = 195; dota
 //const map_size = 480; //wc3
-const map_size = 100;
+const map_size = 96;
 const viewSize = map_size / 2;
 const { scene, renderer, camera, controls } = init(TR, viewSize);
 setLight(TR, scene);
@@ -89,3 +90,6 @@ export async function createLevel() {
 
   //set('floor_big', 1, 1);
 }
+
+let buildings = await loadBuildings(TR);
+scene.add(Object.values(buildings)[0]);
