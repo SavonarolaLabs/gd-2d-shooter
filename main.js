@@ -10,7 +10,7 @@ import { loadRetroForrest } from './src/loadRertoForrest';
 //const map_size = 195; dota
 //const map_size = 480; //wc3
 const map_size = 96;
-const viewSize = map_size / 2;
+const viewSize = map_size / 10;
 const { scene, renderer, camera, controls } = init(TR, viewSize);
 setLight(TR, scene);
 window.addEventListener('resize', () => onResize());

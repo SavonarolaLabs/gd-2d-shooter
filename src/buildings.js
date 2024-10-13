@@ -1,3 +1,4 @@
+///Applications/Blender.app/Contents/MacOS/Blender --background --python-expr "import bpy; bpy.ops.import_scene.fbx(filepath='/Users/x86/repos/u-p3/Assets/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/models/buildings/Archery.FBX'); bpy.ops.export_scene.fbx(filepath='/Users/x86/repos/gd-2d-shooter/assets/TT_RTS_Standard/models/output.fbx', use_selection=False, axis_forward='-Z', axis_up='Y')"
 export const buildings = [
   'Archery.fbx',
   //   'Barracks.FBX',

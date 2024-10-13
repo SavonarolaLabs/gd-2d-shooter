@@ -1,9 +1,9 @@
 export function setLight(TR, scene) {
-  const ambientLight = new TR.AmbientLight(0xaaaaaa, 20.0);
+  const ambientLight = new TR.AmbientLight(0xffffff, 3.0);
   scene.add(ambientLight);
 
-  const directionalLight = new TR.DirectionalLight(0xffffff, 1.2);
-  directionalLight.position.set(0, 20, 0);
-  directionalLight.castShadow = true;
-  scene.add(directionalLight);
+  //const directionalLight = new TR.DirectionalLight(0xffffff, 1.2);
+  //directionalLight.position.set(0, 20, 0);
+  //directionalLight.castShadow = true;
+  //scene.add(directionalLight);
 }
