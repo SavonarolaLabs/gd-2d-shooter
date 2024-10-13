@@ -28,3 +28,5 @@ export const buildings = [
   'Wall_B_wall.FBX',
   'Workshop.FBX',
 ];
+
+export const units = ['TT_RTS_Cavalry_customizable.FBX', 'TT_RTS_Characters_customizable.FBX', 'TT_RTS_Ballista.FBX', 'TT_RTS_Cart.FBX', 'TT_RTS_Catapult.FBX', 'TT_RTS_Ram.FBX'];

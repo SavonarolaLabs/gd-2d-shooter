@@ -5,6 +5,7 @@ import { init } from './src/init';
 import { onResize } from './src/onResize';
 import { tiles } from './src/tiles';
 import { loadRetroForrest } from './src/loadRertoForrest';
+import { loadUnits } from './src/loadUnits';
 
 // initial setup
 //const map_size = 195; dota
@@ -92,5 +93,33 @@ export async function createLevel() {
 }
 
 let buildings = await loadBuildings(TR);
-scene.add(Object.values(buildings)[Object.values(buildings).length - 1]);
-//scene.add(Object.values(buildings)[1]);
+function placeBuildings() {
+  let x = 0;
+  let y = 0;
+  Object.values(buildings).forEach((b) => {
+    x = x + 5;
+    if (x % 25 == 0) {
+      y += 5;
+      x = 0;
+    }
+    b.position.set(x - 30.5, 0, y - 30.5);
+    scene.add(b);
+  });
+}
+placeBuildings();
+
+let units = await loadUnits(TR);
+function placeUnits() {
+  let x = 0;
+  let y = 0;
+  Object.values(units).forEach((b) => {
+    x = x + 1;
+    if (x % 5 == 0) {
+      y += 1;
+      x = 0;
+    }
+    b.position.set(x - 2, 0, y - 2);
+    scene.add(b);
+  });
+}
+placeUnits();
