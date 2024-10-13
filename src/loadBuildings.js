@@ -11,14 +11,14 @@ export async function loadBuildings(TR) {
   const models = {};
   for (let i = 0; i < buildings.length; i++) {
     const fbx = await loader.loadAsync(FBX_PATH + buildings[i]);
-
-    let textureName = 'TT_RTS_Buildings_texture.tga';
-    const texture = textureLoader.load(TEXTURE_PATH + textureName);
+    const texture = textureLoader.load(TEXTURE_PATH + 'TT_RTS_Buildings_texture.tga');
     texture.colorSpace = TR.SRGBColorSpace;
-    // @ts-ignore
-    fbx.children[0].material.map = texture;
 
-    fbx.scale.set(0.01, 0.01, 0.01);
+    const mesh = fbx.children.find((child) => child.isMesh);
+    if (mesh && mesh.material) mesh.material.map = texture;
+
+    fbx.scale.set(0.005, 0.005, 0.005);
+    fbx.position.set(0.5, 0.0, 0.5);
 
     models[buildings[i].split('.')[0]] = fbx;
   }
