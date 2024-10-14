@@ -6,6 +6,7 @@ import { onResize } from './src/onResize';
 import { tiles } from './src/tiles';
 import { loadRetroForrest } from './src/loadRertoForrest';
 import { loadUnits } from './src/loadUnits';
+import { loadMechs } from './src/loadMechs';
 
 // initial setup
 //const map_size = 195; dota
@@ -92,8 +93,8 @@ export async function createLevel() {
   //set('floor_big', 1, 1);
 }
 
-let buildings = await loadBuildings(TR);
-function placeBuildings() {
+async function placeBuildings() {
+  let buildings = await loadBuildings(TR);
   let x = 0;
   let y = 0;
   Object.values(buildings).forEach((b) => {
@@ -106,10 +107,10 @@ function placeBuildings() {
     scene.add(b);
   });
 }
-placeBuildings();
+//await placeBuildings();
 
-let units = await loadUnits(TR);
-function placeUnits() {
+async function placeUnits() {
+  let units = await loadUnits(TR);
   let x = 0;
   let y = 0;
   Object.values(units).forEach((b) => {
@@ -118,8 +119,26 @@ function placeUnits() {
       y += 1;
       x = 0;
     }
-    b.position.set(x - 2, 0, y - 2);
+    b.position.set(x - 25, 0, y - 2);
     scene.add(b);
   });
 }
-placeUnits();
+//await placeUnits();
+
+async function placeMechs() {
+  let mechs = await loadMechs(TR);
+  let x = 0;
+  let y = 0;
+  Object.values(mechs).forEach((b) => {
+    console.log(b);
+    console.log(b.animtions);
+    x = x + 1;
+    if (x % 5 == 0) {
+      y += 1;
+      x = 0;
+    }
+    b.position.set(x - 1, 0, y - 2);
+    scene.add(b);
+  });
+}
+await placeMechs();
